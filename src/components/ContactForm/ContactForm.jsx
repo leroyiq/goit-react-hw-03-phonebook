@@ -1,10 +1,12 @@
 import { Component } from 'react';
 
+const CLEAR_STATE = {
+  name: '',
+  number: '',
+};
+
 export class ContactForm extends Component {
-  state = {
-    name: '',
-    namber: '',
-  };
+  state = CLEAR_STATE;
 
   handleChange = event => {
     const { name, value } = event.target;
@@ -15,7 +17,7 @@ export class ContactForm extends Component {
     event.preventDefault();
     const { name, number } = this.state;
     this.props.onSubmit({ name, number });
-    this.setState({ name: '', number: '' });
+    this.setState(CLEAR_STATE);
   };
 
   render() {
