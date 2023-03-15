@@ -6,7 +6,8 @@ import { ContactList } from './ContactList/ContactList';
 export class App extends Component {
   state = {
     contacts: [],
-    filter: '',
+    name: '',
+    number: '',
   };
 
   onSubmit = ({ name, number }) => {
@@ -16,15 +17,19 @@ export class App extends Component {
         ...prevState.contacts,
         { id: idContact, name, number },
       ],
+      name,
+      number,
     }));
   };
 
   render() {
+    const { contacts } = this.state;
     return (
       <>
         <h2>Phone Book</h2>
         <ContactForm onSubmit={this.onSubmit} />
-        <ContactList />
+        {contacts.length > 0 && <h2>Contacts</h2>}
+        <ContactList contacts={contacts} />
       </>
     );
   }

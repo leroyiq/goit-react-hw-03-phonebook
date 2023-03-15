@@ -24,7 +24,7 @@ export class ContactForm extends Component {
     const { name, number } = this.state;
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} aria-controls="form">
           <label>
             Name
             <input
