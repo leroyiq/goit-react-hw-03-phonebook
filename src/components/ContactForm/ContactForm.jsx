@@ -7,6 +7,7 @@ import {
   Span,
 } from './ContactForm.styled';
 import { FcPlus } from 'react-icons/fc';
+import toast from 'react-hot-toast';
 
 const CLEAR_STATE = {
   name: '',
@@ -24,8 +25,22 @@ export class ContactForm extends Component {
   handleSubmit = event => {
     event.preventDefault();
     const { name, number } = this.state;
-    this.props.onSubmit({ name, number });
-    this.setState(CLEAR_STATE);
+    const { onContacts } = this.props;
+    const checkContact = onContacts.some(
+      contact =>
+        contact.name.toLocaleLowerCase() === name.toLocaleLowerCase()
+    );
+
+    if (!checkContact) {
+      this.props.addContact({ name, number });
+      this.setState(CLEAR_STATE);
+      return;
+    }
+    toast.error(`${name} is already in contact`, {
+      duration: 1500,
+    });
+
+    // this.setState(CLEAR_STATE);
   };
 
   render() {

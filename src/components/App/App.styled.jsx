@@ -9,10 +9,6 @@ export const Wrapper = styled.div`
 
   margin: 0 auto;
   margin-top: 30vh;
-
-  /* :hover {
-    box-shadow: 0px 4px 4px rgb(0 0 0 / 15%);
-  } */
 `;
 
 export const Title = styled.h2`

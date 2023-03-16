@@ -1,15 +1,27 @@
-export const ContactList = ({ contacts }) => {
+import { TiDelete } from 'react-icons/ti';
+import { Button, PhoneItem, NamePhone } from './ContactList.styled';
+
+export const ContactList = ({ contacts, onDelete }) => {
   return (
-    <div>
+    <>
       <ul>
         {contacts.map(({ id, name, number }) => {
           return (
-            <ul key={id}>
-              {name}: {number}
-            </ul>
+            <PhoneItem key={id}>
+              <NamePhone>
+                {name}: {number}
+              </NamePhone>
+              <Button
+                type="button"
+                onClick={() => onDelete(id)}
+                aria-label="Delete"
+              >
+                <TiDelete size="20px" />
+              </Button>
+            </PhoneItem>
           );
         })}
       </ul>
-    </div>
+    </>
   );
 };
