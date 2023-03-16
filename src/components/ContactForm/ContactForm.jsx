@@ -1,5 +1,12 @@
 import { Component } from 'react';
-import { Form, Button } from './ContactForm.styled';
+import {
+  Form,
+  Button,
+  Label,
+  Input,
+  Span,
+} from './ContactForm.styled';
+import { FcPlus } from 'react-icons/fc';
 
 const CLEAR_STATE = {
   name: '',
@@ -26,9 +33,9 @@ export class ContactForm extends Component {
     return (
       <div>
         <Form onSubmit={this.handleSubmit} aria-controls="form">
-          <label>
+          <Label>
             Name
-            <input
+            <Input
               type="text"
               name="name"
               value={name}
@@ -38,11 +45,11 @@ export class ContactForm extends Component {
               //   title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
               required
             />
-          </label>
+          </Label>
 
-          <label>
+          <Label>
             Number
-            <input
+            <Input
               type="tel"
               name="number"
               value={number}
@@ -52,8 +59,10 @@ export class ContactForm extends Component {
               title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
               required
             />
-          </label>
-          <Button type="submit">Add contact</Button>
+          </Label>
+          <Button type="submit">
+            <FcPlus size="20px" /> <Span> Add contact</Span>
+          </Button>
         </Form>
       </div>
     );
