@@ -1,7 +1,8 @@
 import { nanoid } from 'nanoid';
 import { Component } from 'react';
-import { ContactForm } from './ContactForm/ContactForm';
-import { ContactList } from './ContactList/ContactList';
+import { ContactForm } from '../ContactForm/ContactForm';
+import { ContactList } from '../ContactList/ContactList';
+import { Wrapper, Title } from './App.styled';
 
 export class App extends Component {
   state = {
@@ -25,12 +26,12 @@ export class App extends Component {
   render() {
     const { contacts } = this.state;
     return (
-      <>
-        <h2>Phone Book</h2>
+      <Wrapper>
+        <Title>Phone Book</Title>
         <ContactForm onSubmit={this.onSubmit} />
-        {contacts.length > 0 && <h2>Contacts</h2>}
+        {contacts.length > 0 && <Title>Contacts</Title>}
         <ContactList contacts={contacts} />
-      </>
+      </Wrapper>
     );
   }
 }

@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import { Form, Button } from './ContactForm.styled';
 
 const CLEAR_STATE = {
   name: '',
@@ -24,7 +25,7 @@ export class ContactForm extends Component {
     const { name, number } = this.state;
     return (
       <div>
-        <form onSubmit={this.handleSubmit} aria-controls="form">
+        <Form onSubmit={this.handleSubmit} aria-controls="form">
           <label>
             Name
             <input
@@ -52,8 +53,8 @@ export class ContactForm extends Component {
               required
             />
           </label>
-          <button type="submit">Add contact</button>
-        </form>
+          <Button type="submit">Add contact</Button>
+        </Form>
       </div>
     );
   }
