@@ -8,6 +8,7 @@ import {
 } from './ContactForm.styled';
 import { FcPlus } from 'react-icons/fc';
 import toast from 'react-hot-toast';
+import PropTypes from 'prop-types';
 
 const CLEAR_STATE = {
   name: '',
@@ -15,6 +16,11 @@ const CLEAR_STATE = {
 };
 
 export class ContactForm extends Component {
+  static propTypes = {
+    addContact: PropTypes.func.isRequired,
+    onContacts: PropTypes.array.isRequired,
+  };
+
   state = CLEAR_STATE;
 
   handleChange = event => {

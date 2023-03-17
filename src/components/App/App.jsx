@@ -17,6 +17,22 @@ export class App extends Component {
     filter: '',
   };
 
+  componentDidMount() {
+    const myPhoneNumber = JSON.parse(
+      localStorage.getItem('contacts')
+    );
+    if (myPhoneNumber) {
+      this.setState({ contacts: myPhoneNumber });
+    }
+  }
+
+  componentDidUpdate(_, prevState) {
+    const { contacts } = this.state;
+    if (contacts !== prevState.contacts) {
+      localStorage.setItem('contacts', JSON.stringify(contacts));
+    }
+  }
+
   handleChange = event => {
     const { name, value } = event.target;
     this.setState({
