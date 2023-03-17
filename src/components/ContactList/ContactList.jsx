@@ -16,7 +16,7 @@ export const ContactList = ({ contacts, onDelete }) => {
                 onClick={() => onDelete(id)}
                 aria-label="Delete"
               >
-                <TiDelete size="20px" />
+                <TiDelete size="20px" fill="inherit" />
               </Button>
             </PhoneItem>
           );

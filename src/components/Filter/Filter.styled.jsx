@@ -5,7 +5,7 @@ export const Label = styled.label`
   justify-content: center;
   align-items: center;
   font-family: Verdana, Geneva, sans-serif;
-  font-size: 12px;
+  font-size: 14px;
   /* letter-spacing: 1px;
   word-spacing: 1px; */
   color: #000000;

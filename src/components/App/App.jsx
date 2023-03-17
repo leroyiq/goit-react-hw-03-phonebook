@@ -66,15 +66,17 @@ export class App extends Component {
           addContact={this.onSubmit}
           onContacts={contacts}
         />
+        <>
+          {contacts.length > 0 && <Title>Contacts</Title> && (
+            <Filter onFilter={filter} onChange={this.handleChange} />
+          )}
 
-        {contacts.length > 0 && <Title>Contacts</Title> && (
-          <Filter onFilter={filter} onChange={this.handleChange} />
-        )}
+          <ContactList
+            contacts={this.handleFilter()}
+            onDelete={this.handleDelete}
+          />
+        </>
 
-        <ContactList
-          contacts={this.handleFilter()}
-          onDelete={this.handleDelete}
-        />
         <Toaster />
       </Wrapper>
     );

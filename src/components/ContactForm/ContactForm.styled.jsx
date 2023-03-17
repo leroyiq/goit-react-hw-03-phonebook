@@ -30,7 +30,7 @@ export const Label = styled.label`
   text-align: center;
   color: #d9d9d9;
   background: transparent;
-  text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.1),
+  text-shadow: -1px -1px 1px rgba(29, 83, 128, 0.1),
     1px 1px 1px rgba(0, 0, 0, 0.5), 5px -3px 0px rgba(206, 89, 55, 0);
   color: #332b0f;
 `;
@@ -79,7 +79,7 @@ export const Input = styled.input`
   }
   :hover,
   :focus {
-    box-shadow: 0px 0px 5px rgba(66, 66, 66, 0.75);
+    box-shadow: 0px 0px 5px rgba(75, 180, 241, 0.75);
     outline: none;
   }
 `;
