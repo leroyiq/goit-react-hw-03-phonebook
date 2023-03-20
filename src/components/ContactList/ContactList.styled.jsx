@@ -7,13 +7,14 @@ export const Button = styled.button`
   cursor: pointer;
   background-color: transparent;
   border: none;
-
+  fill: #1b528a;
   /* padding: 3px 4px; */
   /* text-decoration: none;
-  text-shadow: 0px 1px 0px #1570cd; */
+  text-shadow: 0px 1px 0px #143c64; */
 
   :hover {
     scale: 1.2;
+    fill: #8a311b;
   }
   :active {
     position: relative;
